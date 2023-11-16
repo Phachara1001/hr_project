@@ -5,7 +5,9 @@ from django.contrib.auth import authenticate,login,logout
 
 # Create your views here.
 def home(request):
-    return render(request,'base.html')
+    person_qry = Person.objects.all()
+    context = {'person':person_qry}
+    return render(request,'base.html',context)
 
 def add(request):
     if request.method == 'POST':
