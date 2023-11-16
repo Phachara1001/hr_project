@@ -1,0 +1,58 @@
+{% load static %}
+<html>
+    <head>
+        <title>{% block title %} ตั้งหวังเจ๊งจำกัด {% endblock%}</title>
+        <link rel="shortcut icon" type="image/png" href="{% static 'image/favicon-32x32.png' %}" > 
+        {% load bootstrap5 %}
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        <style>
+          body {
+            font-family: 'Kanit', sans-serif;
+          }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+            <div class="container-fluid">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active" href="/"><i class="bi bi-house"></i>หน้าหลัก</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="list"><i class="bi bi-person-lines-fill"></i>รายชื่อพนักงาน</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="add"><i class="bi bi-person-plus-fill"></i>เพิ่มรายชื่อพนักงาน</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="manage"><i class="bi bi-pencil-square"></i>จัดการข้อมูลพนักงาน</a>
+                </li>
+                {% if user.is_authenticated%}
+                  <li class="nav-item">
+                    <a class="nav-link" href="logout">ออกจากระบบ</a>
+                  </li>
+                {% else %}
+                  
+                {% endif %}
+              </ul>
+              <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="login"><i class="bi bi-door-open"></i>เข้าสู่ระบบ</a>
+              </li>  
+            </ul>
+            </div>
+          </nav>
+      {% include 'msg.html' %}
+      {% block content %}
+          <div class="container">
+            <h1> this is base</h1>
+          </div>
+      {% endblock %}
+    </div>
+    </body>
+</html>

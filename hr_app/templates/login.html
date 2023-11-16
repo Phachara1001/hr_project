@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-3 ps-2 pe-2 rounded border shadow">
+<form action="" class="ps-2 pe-2 mt-3" method="POST">
+  {% csrf_token %}
+  
+    <h3> Login เข้าสู่ระบบ</h3>
+    <div class="mb-3 mt-3">
+      <label for="username" class="form-label">username :</label>
+      <input type="text" class="form-control" id="username" placeholder="Enter email" name="username">
+    </div>
+    <div class="mb-3">
+      <label for="pwd" class="form-label">Password :</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+    </div>
+    <div class="form-check mb-3">
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" name="remember"> Remember me
+      </label>
+    </div>
+    <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-success justify-content-start">Sign In</button>
+        <button type="submit" class="btn btn-danger justify-content-start mt-2">Cancle</button>
+    </div>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    </div>
+  </form>
+</div>
+{% endblock  %}

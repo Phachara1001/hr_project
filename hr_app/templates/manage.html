@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="container mt-3 ps-2 pe-2 rounded border shadow">
+    <h1>จัดการรายชื่อพนักงาน</h1>
+    <table class="table table-bordered table-sm">
+        <thead>
+          <tr>
+            <th>รหัสพนักงาน</th>
+            <th>ชื่อ - นามสกุล</th>
+            <th>อีเมล</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <th><a href="edit/{{i.drug_id}}" type="a" class="btn btn-warning">แก้ไข</a></th>
+          <th><a href="delete/{{i.drug_id}}" type="a" class="btn btn-danger">ลบ</a></th>
+        </tbody>
+      </table>
+  </div>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-3 pt-4 pb-4 ps-4 pe-4 rounded border shadow">
+  <h2>เพิ่มข้อมูลพนักงาน</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="id_firstname" class="form-label">ชื่อจริง : </label>
+      <input type="text" name="firstname" class="form-control" id="id_firstname" placeholder="ตัวอย่าง : นายขยัน" required>
+    </div>
+    <div class="mb-3">
+      <label for="id_lastname" class="form-label">นามสกุล : </label>
+      <input type="text" name="lastname" class="form-control" id="id_lastname" placeholder="ตัวอย่าง : หมั่นเพียร" required>
+    </div>
+    <div class="mb-3">
+      <label for="id_lastname" class="form-label">อีเมลล์ : </label>
+      <input type="email" name="email" class="form-control" id="id_email" placeholder="ตัวอย่าง : ex@gmail.com" required>
+    </div>
+    <div class="mb-3">
+      <label for="id_lastname" class="form-label">เบอร์โทร : </label>
+      <input type="number" name="telephone" class="form-control" id="id_telephone" placeholder="ตัวอย่าง : @ex123" required>
+    </div>
+    <div class="mb-3">
+      <label for="id_lastname" class="form-label">ไลน์ไอดี : </label>
+      <input type="text" name="line" class="form-control" id="id_line" placeholder="ตัวอย่าง : 0811234567" required>
+    </div>
+    <div class="mb-3">
+      <label for="id_lastname" class="form-label">เฟซบุ๊คลิงค์ : </label>
+      <input type="text" name="facebook" class="form-control" id="id_facebook" placeholder="ตัวอย่าง : https://www.facebook.com/profile.php?id=123456" required>
+    </div>
+    <div class="mb-3">
+      <label for="id_picture" class="form-label">รูปภาพ ( หน้าตรงสองนิ้ว ) :</label>
+      <input type="file" name="picture" class="form-control" id="id_picture" accept="image/*" required>
+    </div>
+    <hr>
+    <h2>ข้อมูลสัญญาจ้าง</h2>
+    <div class="mb-3">
+      <label for="id_lastname" class="form-label">วันเริ่มสัญญา : </label>
+      <input type="date" name="workyear" class="form-control" id="id_workyear"  required>
+    </div>
+    <div class="mb-3">
+      <label for="id_lastname" class="form-label">วันสิ้นสุดสัญญา : </label>
+      <input type="date" name="contract" class="form-control" id="id_contract"  required>
+    </div>
+    <div class="d-grid gap-2">
+      <button type="submit" class="btn btn-success justify-content-start">เพิ่มข้อมูล</button>
+      <button type="submit" class="btn btn-danger justify-content-start mt-2">ยกเลิก</button>
+  </div>
+  </form>
+</div>
+{% endblock %}
