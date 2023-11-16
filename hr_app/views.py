@@ -33,7 +33,9 @@ def list(request):
     return render(request,'list.html',context)
 
 def manage(request):
-    return render(request,'manage.html')
+    person_qry = Person.objects.all()
+    context = {'person':person_qry}
+    return render(request,'manage.html',context)
 
 def custom_login(request): #ชื่อฟังชั่น
     if request.method == 'POST':
