@@ -1,20 +1,32 @@
 {% extends "base.html" %}
 {% block content %}
-  <div class="container mt-3 ps-2 pe-2 rounded border shadow">
+  <div class="container mt-3 pt-4 pb-4 ps-4 pe-4 rounded border shadow">
     <h1>จัดการรายชื่อพนักงาน</h1>
     <table class="table table-bordered table-sm">
         <thead>
           <tr>
             <th>รหัสพนักงาน</th>
-            <th>ชื่อ - นามสกุล</th>
+            <th>ชื่อ</th>
+            <th>นามสกุล</th>
+            <th>เบอร์โทร</th>
             <th>อีเมล</th>
+            <th>แก้ไข</th>
+            <th>ลบ</th>
           </tr>
         </thead>
         <tbody>
-
-          <th><a href="edit/{{i.drug_id}}" type="a" class="btn btn-warning">แก้ไข</a></th>
-          <th><a href="delete/{{i.drug_id}}" type="a" class="btn btn-danger">ลบ</a></th>
+          {% for i in person %}
+          <tr>
+            <td class="text-center">{{i.p_id}}</td>
+            <td>{{i.p_firstname}}</td>
+            <td>{{i.p_lastname}}</td>
+            <td>{{i.p_telephone}}</td>
+            <td>{{i.p_email}}</td>
+            <th><a href="" type="a" class="btn btn-warning">แก้ไข</a></th>
+            <th><a href="" type="a" class="btn btn-danger">ลบ</a></th>
+          </tr>
         </tbody>
+        {% endfor %}
       </table>
   </div>
 {% endblock %}
